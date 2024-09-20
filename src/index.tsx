@@ -9,6 +9,10 @@ import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
 import { Grid2 } from '@mui/material';
 import './styles/main.css'
+import { HeaderComponent } from './components/header';
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer } from 'react-toastify';
+import { ContextProvider } from './context';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -16,7 +20,10 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <div className='main-container'>
-      <RouterProvider router={routes} />
+      <ContextProvider>
+        <ToastContainer />
+        <RouterProvider router={routes} />
+      </ContextProvider>
     </div>
   </React.StrictMode>
 );

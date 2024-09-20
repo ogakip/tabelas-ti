@@ -1,9 +1,14 @@
 import { createBrowserRouter } from "react-router-dom";
-import { DashboardPage } from "../pages/dashboard";
+import { IPPrinters } from "../pages/IPPrinters/index";
+import { Login } from "../pages/login";
 
 export const routes = createBrowserRouter([
     {
         path: '/',
-        element: <DashboardPage/>
+        element: <IPPrinters/>
+    },
+    {
+        path: '/login',
+        element: <Login/>
     }
 ]);
